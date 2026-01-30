@@ -1,22 +1,22 @@
 class Irl < Formula
   desc "CLI for creating Idempotent Research Loop (IRL) projects"
   homepage "https://github.com/drpedapati/irl-template"
-  version "0.3.5"
+  version "0.5.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/drpedapati/irl-template/releases/download/v0.3.5/irl-darwin-arm64"
-      sha256 "cde6c9e8b3f1995f1e1f0f2c98ec398678db95ca36ff64c91b19bd0bad1584f7"
+      url "https://github.com/drpedapati/irl-template/releases/download/v0.5.0/irl-darwin-arm64"
+      sha256 "74ccdf324536424e72a2ecbfdfd2e363b885ce49ef012ede41d92ae1640fc1b3"
     else
-      url "https://github.com/drpedapati/irl-template/releases/download/v0.3.5/irl-darwin-amd64"
-      sha256 "192d40dd019fb90f2bb268033727faae30a2f60661214d9c446d57bd2607be92"
+      url "https://github.com/drpedapati/irl-template/releases/download/v0.5.0/irl-darwin-amd64"
+      sha256 "8a2a04450a495e8df10daf16d67bdce23724d598c4508f43ff98605804805e90"
     end
   end
 
   on_linux do
-    url "https://github.com/drpedapati/irl-template/releases/download/v0.3.5/irl-linux-amd64"
-    sha256 "2d7ec566046d93e5a757d6326a6cf6c23ba342f68afe4cea2fb8f64fab502c8d"
+    url "https://github.com/drpedapati/irl-template/releases/download/v0.5.0/irl-linux-amd64"
+    sha256 "acb4b04e35010dd76fd32b5f74644ce529d01c7a55685da71454a932ad8f4fa0"
   end
 
   def install
