@@ -17,6 +17,7 @@ brew install irl
 | `sciclaw` | Paired scientist CLI that uses IRL for project lifecycle |
 | `sciclaw-docx-review` | Installs `docx-review` binary without colliding with other taps |
 | `sciclaw-pubmed-cli` | Installs `pubmed` and `pubmed-cli` binaries without colliding with other taps |
+| `sciclaw-quarto` | Installs Quarto CLI on Linux (macOS users should prefer `brew install --cask quarto`) |
 
 ## Usage
 
