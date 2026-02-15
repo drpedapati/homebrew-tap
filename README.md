@@ -15,8 +15,8 @@ brew install irl
 |---------|-------------|
 | `irl` | CLI for creating IRL research projects with auto-naming |
 | `sciclaw` | Paired scientist CLI that uses IRL for project lifecycle |
-| `docx-review` | Review/edit Word documents with tracked changes from the CLI |
-| `pubmed-cli` | PubMed search and citation graph traversal |
+| `sciclaw-docx-review` | Installs `docx-review` binary without colliding with other taps |
+| `sciclaw-pubmed-cli` | Installs `pubmed` and `pubmed-cli` binaries without colliding with other taps |
 
 ## Usage
 

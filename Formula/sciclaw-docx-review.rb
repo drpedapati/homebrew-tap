@@ -1,4 +1,4 @@
-class DocxReview < Formula
+class SciclawDocxReview < Formula
   desc "Read, edit, and diff Word documents with tracked changes from the CLI"
   homepage "https://github.com/henrybloomingdale/docx-review"
   license "MIT"

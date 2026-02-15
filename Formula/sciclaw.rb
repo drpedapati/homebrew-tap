@@ -9,8 +9,8 @@ class Sciclaw < Formula
   depends_on "go" => :build
   depends_on "ripgrep"
   depends_on "irl"
-  depends_on "docx-review"
-  depends_on "pubmed-cli"
+  depends_on "sciclaw-docx-review"
+  depends_on "sciclaw-pubmed-cli"
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
@@ -26,8 +26,8 @@ class Sciclaw < Formula
     assert_match "v#{version}", shell_output("#{bin}/sciclaw --version")
     assert_match "ripgrep", shell_output("#{Formula["ripgrep"].opt_bin}/rg --version")
     assert_match "irl", shell_output("#{Formula["irl"].opt_bin}/irl --version 2>&1")
-    assert_match "docx-review", shell_output("#{Formula["docx-review"].opt_bin}/docx-review --version")
-    assert_match "PubMed", shell_output("#{Formula["pubmed-cli"].opt_bin}/pubmed --help")
+    assert_match "docx-review", shell_output("#{Formula["sciclaw-docx-review"].opt_bin}/docx-review --version")
+    assert_match "PubMed", shell_output("#{Formula["sciclaw-pubmed-cli"].opt_bin}/pubmed --help")
     ENV["HOME"] = testpath
     system "#{bin}/sciclaw", "onboard", "--yes"
     assert_predicate testpath/".picoclaw/workspace/AGENTS.md", :exist?

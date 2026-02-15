@@ -1,4 +1,4 @@
-class PubmedCli < Formula
+class SciclawPubmedCli < Formula
   desc "PubMed from your terminal — search, fetch, cite, traverse. Built for humans and AI agents."
   homepage "https://github.com/drpedapati/pubmed-cli"
   url "https://github.com/drpedapati/pubmed-cli/archive/refs/tags/v0.5.3.tar.gz"
