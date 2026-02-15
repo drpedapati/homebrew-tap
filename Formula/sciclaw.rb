@@ -9,6 +9,8 @@ class Sciclaw < Formula
   depends_on "go" => :build
   depends_on "ripgrep"
   depends_on "irl"
+  depends_on "docx-review"
+  depends_on "pubmed-cli"
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
@@ -25,4 +27,3 @@ class Sciclaw < Formula
     assert_match "v#{version}", shell_output("#{bin}/sciclaw --version")
   end
 end
-
