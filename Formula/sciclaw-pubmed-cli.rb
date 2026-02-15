@@ -1,16 +1,31 @@
 class SciclawPubmedCli < Formula
-  desc "PubMed from your terminal — search, fetch, cite, traverse. Built for humans and AI agents."
+  desc "PubMed terminal client for search, fetch, cite, and traversal"
   homepage "https://github.com/drpedapati/pubmed-cli"
-  url "https://github.com/drpedapati/pubmed-cli/archive/refs/tags/v0.5.3.tar.gz"
-  sha256 "3eea9ae9f598c37b940c95dc34a390681245e9672a89d6466a69824c40c93c09"
   license "MIT"
-  version "0.5.3"
 
-  depends_on "go" => :build
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/drpedapati/pubmed-cli/releases/download/v0.5.4/pubmed-darwin-arm64"
+      sha256 "122ba342c89318f61790bca731a8b2424b350e00ab702c721b277217d7929a9d"
+    else
+      url "https://github.com/drpedapati/pubmed-cli/releases/download/v0.5.4/pubmed-darwin-amd64"
+      sha256 "5738428ed780c5185a7f043f5d5255a7f0aea09a247abb8c4f936dc765dc11e0"
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://github.com/drpedapati/pubmed-cli/releases/download/v0.5.4/pubmed-linux-arm64"
+      sha256 "8360f26c33a6c5b5e12acdc6f7d55899dff15d5f0fc766b0632b69347b61c638"
+    else
+      url "https://github.com/drpedapati/pubmed-cli/releases/download/v0.5.4/pubmed-linux-amd64"
+      sha256 "e2c539e4c9a268f06aa3bbf1387dff923e1fdc148a0edb8f1449eadc8e63e828"
+    end
+  end
 
   def install
-    ldflags = "-s -w"
-    system "go", "build", *std_go_args(output: bin/"pubmed", ldflags: ldflags), "./cmd/pubmed"
+    binary = Dir["pubmed-*"].first || "pubmed"
+    bin.install binary => "pubmed"
     (bin/"pubmed-cli").make_symlink bin/"pubmed"
   end
 
@@ -19,4 +34,3 @@ class SciclawPubmedCli < Formula
     assert_match "Search PubMed", shell_output("#{bin}/pubmed-cli --help")
   end
 end
-
