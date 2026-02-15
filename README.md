@@ -1,6 +1,6 @@
 # Homebrew Tap
 
-Homebrew formulas for IRL (Idempotent Research Loop) tools.
+Homebrew formulas for IRL (Idempotent Research Loop) tools and sciClaw.
 
 ## Installation
 
@@ -14,6 +14,7 @@ brew install irl
 | Formula | Description |
 |---------|-------------|
 | `irl` | CLI for creating IRL research projects with auto-naming |
+| `sciclaw` | Paired scientist CLI that uses IRL for project lifecycle |
 
 ## Usage
 
@@ -38,4 +39,5 @@ irl templates
 ```bash
 brew update
 brew upgrade irl
+brew upgrade sciclaw
 ```
