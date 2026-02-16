@@ -24,12 +24,18 @@ class SciclawQuarto < Formula
 
   def install
     # Preserve upstream layout so the `bin/quarto` launcher can find `share/`.
-    if OS.mac?
+    if (buildpath/"bin/quarto").exist?
       prefix.install "bin", "share"
-    else
-      root = Dir["quarto-*"].first
-      prefix.install "#{root}/bin", "#{root}/share"
+      return
     end
+
+    # Linux archives are expected to include a top-level directory (often `quarto-<ver>`),
+    # but don't assume a specific folder name: locate the launcher and derive the root.
+    quarto_bin = Dir["**/bin/quarto"].first
+    odie "quarto launcher not found in archive; expected **/bin/quarto" unless quarto_bin
+    root = File.dirname(File.dirname(quarto_bin))
+    odie "quarto share/ not found next to #{root}/bin" unless (buildpath/"#{root}/share").exist?
+    prefix.install "#{root}/bin", "#{root}/share"
   end
 
   test do
