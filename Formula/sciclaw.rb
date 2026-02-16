@@ -2,14 +2,15 @@ class Sciclaw < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
   license "MIT"
+  version "0.1.27"
 
-  source_url = "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.26.tar.gz"
-  source_sha256 = "241d2b7b8eca9ed54200a26ed409b67b9ced362b051b086ad4a56d2e9eda75ee"
+  source_url = "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.27.tar.gz"
+  source_sha256 = "0c8fc063570d30fd132ec455261d1d9b9065e6f38c8dfc82fc3b7f7c19a7b4f9"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.26/sciclaw-darwin-arm64"
-      sha256 "58dbfa81c456b98b94b94980361fdb5ce1911acf65b09d8f20ea352a1d09f3da"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.27/sciclaw-darwin-arm64"
+      sha256 "0c4088a40a24e3c00b9189284d21e1fabace919bbd0dc0d9896981b0dfa56ba0"
     else
       url source_url
       sha256 source_sha256
@@ -18,17 +19,18 @@ class Sciclaw < Formula
   end
 
   on_linux do
+    depends_on "gcc" => :build
+
     if Hardware::CPU.intel?
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.26/sciclaw-linux-amd64"
-      sha256 "852815a8cad3df7626c19a40ef3d23f0c1abe4d3066120e150dcbefbbc6ea617"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.27/sciclaw-linux-amd64"
+      sha256 "98a6c634a4b93cfb4ad58bad33b4ae707e92ede2f44dacd2632c03047894f4eb"
     elsif Hardware::CPU.arm?
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.26/sciclaw-linux-arm64"
-      sha256 "1e5233b288afbaaa316be71e2434fbe588debfb80c5b54a524e049dd0f4a1600"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.27/sciclaw-linux-arm64"
+      sha256 "275b0bc55989652a84ddf420f375ad9b8d8666ee97eff71b9245c496f6e68adb"
     else
       url source_url
       sha256 source_sha256
       depends_on "go" => :build
-      depends_on "gcc" => :build
     end
 
     depends_on "sciclaw-quarto"
