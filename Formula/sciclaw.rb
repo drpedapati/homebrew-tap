@@ -1,14 +1,13 @@
 class Sciclaw < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.9.tar.gz"
-  sha256 "ce213d1f4acb54bdc849d1bff69fd37dbe92ae54dec62e1c0643dead1fe3aba6"
+  url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.10.tar.gz"
+  sha256 "0d5917c2372b1729c94cb7f67b3bd266bb908ccdd567b316d7d9cf51fe01ca56"
   license "MIT"
-  version "0.1.9"
 
   depends_on "go" => :build
-  depends_on "ripgrep"
   depends_on "irl"
+  depends_on "ripgrep"
   depends_on "sciclaw-docx-review"
   depends_on "sciclaw-pubmed-cli"
 
@@ -36,9 +35,9 @@ class Sciclaw < Formula
     assert_match "docx-review", shell_output("#{Formula["sciclaw-docx-review"].opt_bin}/docx-review --version")
     assert_match "PubMed", shell_output("#{Formula["sciclaw-pubmed-cli"].opt_bin}/pubmed --help")
     ENV["HOME"] = testpath
-    system "#{bin}/sciclaw", "onboard", "--yes"
-    assert_predicate testpath/".picoclaw/workspace/AGENTS.md", :exist?
-    assert_predicate testpath/".picoclaw/workspace/HOOKS.md", :exist?
-    assert_predicate testpath/".picoclaw/workspace/skills/scientific-writing/SKILL.md", :exist?
+    system bin/"sciclaw", "onboard", "--yes"
+    assert_path_exists testpath/".picoclaw/workspace/AGENTS.md"
+    assert_path_exists testpath/".picoclaw/workspace/HOOKS.md"
+    assert_path_exists testpath/".picoclaw/workspace/skills/scientific-writing/SKILL.md"
   end
 end
