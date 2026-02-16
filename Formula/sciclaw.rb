@@ -1,8 +1,8 @@
 class Sciclaw < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.10.tar.gz"
-  sha256 "0d5917c2372b1729c94cb7f67b3bd266bb908ccdd567b316d7d9cf51fe01ca56"
+  url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.11.tar.gz"
+  sha256 "fff76296dfd22ced83b541c077e1a03f17d5577526cf92300df6caf05c3cc3e9"
   license "MIT"
 
   depends_on "go" => :build
@@ -36,8 +36,8 @@ class Sciclaw < Formula
     assert_match "PubMed", shell_output("#{Formula["sciclaw-pubmed-cli"].opt_bin}/pubmed --help")
     ENV["HOME"] = testpath
     system bin/"sciclaw", "onboard", "--yes"
-    assert_path_exists testpath/".picoclaw/workspace/AGENTS.md"
-    assert_path_exists testpath/".picoclaw/workspace/HOOKS.md"
-    assert_path_exists testpath/".picoclaw/workspace/skills/scientific-writing/SKILL.md"
+    assert_path_exists testpath/"sciclaw/AGENTS.md"
+    assert_path_exists testpath/"sciclaw/HOOKS.md"
+    assert_path_exists testpath/"sciclaw/skills/scientific-writing/SKILL.md"
   end
 end
