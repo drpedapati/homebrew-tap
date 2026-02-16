@@ -1,8 +1,8 @@
 class Sciclaw < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.12.tar.gz"
-  sha256 "7f1199ab308f3b5661710cafef52014aac889093dda674d0f07997afbb5e5ca4"
+  url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.13.tar.gz"
+  sha256 "27da169519b10c48c67202f5f84c5aa96a6f7b99b2eaaab935f7ed6015f897bf"
   license "MIT"
 
   depends_on "go" => :build
@@ -30,7 +30,7 @@ class Sciclaw < Formula
     assert_match "ripgrep", shell_output("#{Formula["ripgrep"].opt_bin}/rg --version")
     assert_match "irl", shell_output("#{Formula["irl"].opt_bin}/irl --version 2>&1")
     if OS.linux?
-      assert_match(/\\d+\\.\\d+\\.\\d+/, shell_output("#{Formula["sciclaw-quarto"].opt_bin}/quarto --version").strip)
+      assert_match(/\d+\.\d+\.\d+/, shell_output("#{Formula["sciclaw-quarto"].opt_bin}/quarto --version").strip)
     end
     assert_match "docx-review", shell_output("#{Formula["sciclaw-docx-review"].opt_bin}/docx-review --version")
     assert_match "PubMed", shell_output("#{Formula["sciclaw-pubmed-cli"].opt_bin}/pubmed --help")
