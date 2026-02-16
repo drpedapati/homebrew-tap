@@ -1,8 +1,8 @@
 class Sciclaw < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.13.tar.gz"
-  sha256 "27da169519b10c48c67202f5f84c5aa96a6f7b99b2eaaab935f7ed6015f897bf"
+  url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.14.tar.gz"
+  sha256 "e6baf88afe2f557f877d9f13f4538277abb50e727d6056aba4793aa3157497b0"
   license "MIT"
 
   depends_on "go" => :build
