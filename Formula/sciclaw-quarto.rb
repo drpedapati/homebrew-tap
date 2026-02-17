@@ -47,8 +47,8 @@ class SciclawQuarto < Formula
     if OS.mac?
       # Quarto macOS archives include both architectures; keep only native tools for audit/linkage.
       tools_dir = libexec/"bin/tools"
-      rm_rf(tools_dir/"x86_64") if Hardware::CPU.arm?
-      rm_rf(tools_dir/"aarch64") if Hardware::CPU.intel?
+      rm_r(tools_dir/"x86_64") if Hardware::CPU.arm? && (tools_dir/"x86_64").exist?
+      rm_r(tools_dir/"aarch64") if Hardware::CPU.intel? && (tools_dir/"aarch64").exist?
     end
 
     bin.install_symlink libexec/"bin/quarto"
