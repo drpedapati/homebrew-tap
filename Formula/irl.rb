@@ -5,18 +5,22 @@ class Irl < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
+    on_arm do
       url "https://github.com/drpedapati/irl-template/releases/download/v0.5.17/irl-darwin-arm64"
       sha256 "6439931b5bde4264a6193587b36095ab464aeffed66e99845b8a3cdd2842c6f7"
-    else
+    end
+
+    on_intel do
       url "https://github.com/drpedapati/irl-template/releases/download/v0.5.17/irl-darwin-amd64"
       sha256 "829d8d92dddd6b3d0245c45060f276496220bc3a37c618c9292d25433b0e7fc5"
     end
   end
 
   on_linux do
-    url "https://github.com/drpedapati/irl-template/releases/download/v0.5.17/irl-linux-amd64"
-    sha256 "3cd4ceda734027d77ba8bde1d8413848f498cf41ca3d59ee4b491eade5dcd98a"
+    on_intel do
+      url "https://github.com/drpedapati/irl-template/releases/download/v0.5.17/irl-linux-amd64"
+      sha256 "3cd4ceda734027d77ba8bde1d8413848f498cf41ca3d59ee4b491eade5dcd98a"
+    end
   end
 
   def install
@@ -24,6 +28,6 @@ class Irl < Formula
   end
 
   test do
-    system "#{bin}/irl", "--help"
+    system bin/"irl", "--help"
   end
 end
