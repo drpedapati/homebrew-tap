@@ -17,8 +17,8 @@ class Irl < Formula
 
   on_linux do
     on_arm do
-      url "https://api.github.com/repos/drpedapati/irl-template/tarball/v0.5.17"
-      sha256 "f73fe2be621197a23f559e3bd5f6bd0b56ab4001f757f6924552895d7c801be5"
+      url "https://github.com/drpedapati/irl-template/archive/refs/tags/v0.5.17.tar.gz"
+      sha256 "2cdddd8f4e56f9e8fe3b278446a3f716ea4c5506b51b6c7d74c177c523d58aeb"
       depends_on "go" => :build
     end
 
