@@ -1,19 +1,20 @@
 class Sciclaw < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.28.tar.gz"
-  sha256 "594b1ef5c61d2dac5e0e16a327857b7d22d30e32311de5337973ffb2b2c49385"
+  url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.30.tar.gz"
+  sha256 "ec7f7ddf9aa570858d69ba7dcb2b45c0cd743f1d11546c405432249059ab421c"
   license "MIT"
 
   depends_on "go" => :build
-  depends_on "irl"
-  depends_on "ripgrep"
-  depends_on "sciclaw-docx-review"
-  depends_on "sciclaw-pubmed-cli"
 
   on_linux do
     depends_on "sciclaw-quarto"
   end
+
+  depends_on "irl"
+  depends_on "ripgrep"
+  depends_on "sciclaw-docx-review"
+  depends_on "sciclaw-pubmed-cli"
 
   def install
     ENV["CGO_ENABLED"] = "0"
