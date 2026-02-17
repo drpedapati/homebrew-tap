@@ -17,9 +17,8 @@ class Irl < Formula
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/irl-template/archive/refs/tags/v0.5.17.tar.gz"
-      sha256 "2cdddd8f4e56f9e8fe3b278446a3f716ea4c5506b51b6c7d74c177c523d58aeb"
-      depends_on "go" => :build
+      url "https://github.com/drpedapati/irl-template/releases/download/v0.5.17/irl-linux-arm64"
+      sha256 "7706a2262c1de343b4808ca995c463850c3470673f005d7337eef82fea542de9"
     end
 
     on_intel do
@@ -29,13 +28,6 @@ class Irl < Formula
   end
 
   def install
-    # Build from source on Linux ARM where no upstream release binary is available.
-    if OS.linux? && Hardware::CPU.arm?
-      ldflags = "-s -w -X main.version=#{version}"
-      system "go", "build", *std_go_args(output: bin/"irl", ldflags: ldflags), "."
-      return
-    end
-
     bin.install Dir["irl-*"].first => "irl"
   end
 
