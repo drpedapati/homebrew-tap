@@ -1,7 +1,6 @@
 class SciclawDocxReview < Formula
   desc "Read, edit, and diff Word documents with tracked changes from the CLI"
   homepage "https://github.com/drpedapati/docx-review"
-  version "1.2.0"
   license "MIT"
 
   on_macos do

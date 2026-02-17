@@ -1,7 +1,6 @@
 class SciclawPubmedCli < Formula
   desc "PubMed terminal client for search, fetch, cite, and traversal"
   homepage "https://github.com/drpedapati/pubmed-cli"
-  version "0.5.4"
   license "MIT"
 
   on_macos do
