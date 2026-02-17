@@ -1,7 +1,6 @@
 class SciclawQuarto < Formula
   desc "Quarto CLI for scientific and technical publishing"
   homepage "https://quarto.org"
-  version "1.8.27"
   license "MIT"
 
   on_macos do
