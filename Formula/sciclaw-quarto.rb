@@ -1,4 +1,4 @@
-  class SciclawQuarto < Formula
+class SciclawQuarto < Formula
   desc "Quarto CLI for scientific and technical publishing"
   homepage "https://quarto.org"
   license "MIT"
