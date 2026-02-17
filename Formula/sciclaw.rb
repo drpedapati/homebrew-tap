@@ -12,11 +12,11 @@ class Sciclaw < Formula
   depends_on "sciclaw-pubmed-cli"
 
   on_linux do
-    depends_on "gcc" => :build
     depends_on "sciclaw-quarto"
   end
 
   def install
+    ENV["CGO_ENABLED"] = "0"
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(output: bin/"sciclaw", ldflags: ldflags), "./cmd/picoclaw"
     (bin/"picoclaw").make_symlink bin/"sciclaw"
