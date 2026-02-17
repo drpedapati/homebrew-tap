@@ -31,19 +31,20 @@ class SciclawQuarto < Formula
   conflicts_with cask: "quarto", because: "both install the `quarto` executable"
 
   def install
-    # Preserve upstream layout so the `bin/quarto` launcher can find `share/`.
+    # Preserve upstream layout under libexec and expose only the launcher.
     if (buildpath/"bin/quarto").exist?
-      prefix.install "bin", "share"
-      return
+      libexec.install "bin", "share"
+    else
+      # Linux archives are expected to include a top-level directory (often `quarto-<ver>`),
+      # but don't assume a specific folder name: locate the launcher and derive the root.
+      quarto_bin = Dir["**/bin/quarto"].first
+      odie "quarto launcher not found in archive; expected **/bin/quarto" unless quarto_bin
+      root = dirname(quarto_bin, 2)
+      odie "quarto share/ not found next to #{root}/bin" unless (buildpath/"#{root}/share").exist?
+      libexec.install "#{root}/bin", "#{root}/share"
     end
 
-    # Linux archives are expected to include a top-level directory (often `quarto-<ver>`),
-    # but don't assume a specific folder name: locate the launcher and derive the root.
-    quarto_bin = Dir["**/bin/quarto"].first
-    odie "quarto launcher not found in archive; expected **/bin/quarto" unless quarto_bin
-    root = dirname(quarto_bin, 2)
-    odie "quarto share/ not found next to #{root}/bin" unless (buildpath/"#{root}/share").exist?
-    prefix.install "#{root}/bin", "#{root}/share"
+    bin.install_symlink libexec/"bin/quarto"
   end
 
   test do

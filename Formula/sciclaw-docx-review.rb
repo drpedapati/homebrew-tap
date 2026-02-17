@@ -16,6 +16,9 @@ class SciclawDocxReview < Formula
   end
 
   on_linux do
+    depends_on "patchelf" => :build
+    depends_on "zlib-ng-compat"
+
     on_arm do
       url "https://github.com/drpedapati/docx-review/releases/download/v1.2.0/docx-review-linux-arm64"
       sha256 "2f85ddc59514aab411332c17b051d0e9e4ec8878d8b74e09e8e1918052281dcc"
@@ -30,6 +33,13 @@ class SciclawDocxReview < Formula
   def install
     binary = Dir["docx-review-*"].first || "docx-review"
     bin.install binary => "docx-review"
+
+    # Ensure Linux runtime uses Homebrew's zlib, not a system path.
+    return unless OS.linux?
+
+    zlib_opt = Formula["zlib-ng-compat"].opt_lib
+    patchelf = Formula["patchelf"].opt_bin/"patchelf"
+    system patchelf, "--set-rpath", zlib_opt.to_s, bin/"docx-review"
   end
 
   test do
