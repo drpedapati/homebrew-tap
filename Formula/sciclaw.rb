@@ -25,8 +25,8 @@ class Sciclaw < Formula
   end
 
   test do
-    assert_match "Usage:", shell_output("#{bin}/sciclaw --help")
-    assert_match "Usage:", shell_output("#{bin}/picoclaw --help")
+    assert_match "Usage:", shell_output("#{bin}/sciclaw")
+    assert_match "Usage:", shell_output("#{bin}/picoclaw")
     assert_match "v#{version}", shell_output("#{bin}/sciclaw --version")
     assert_match "ripgrep", shell_output("#{Formula["ripgrep"].opt_bin}/rg --version")
     assert_match "irl", shell_output("#{Formula["irl"].opt_bin}/irl --version 2>&1")

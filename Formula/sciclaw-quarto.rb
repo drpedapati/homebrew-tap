@@ -44,6 +44,13 @@ class SciclawQuarto < Formula
       libexec.install "#{root}/bin", "#{root}/share"
     end
 
+    if OS.mac?
+      # Quarto macOS archives include both architectures; keep only native tools for audit/linkage.
+      tools_dir = libexec/"bin/tools"
+      rm_rf(tools_dir/"x86_64") if Hardware::CPU.arm?
+      rm_rf(tools_dir/"aarch64") if Hardware::CPU.intel?
+    end
+
     bin.install_symlink libexec/"bin/quarto"
   end
 
