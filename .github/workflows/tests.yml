@@ -61,7 +61,15 @@ jobs:
       - run: brew test-bot --only-setup
 
       - run: brew test-bot --only-tap-syntax
-      - run: brew test-bot --only-formulae
+      - run: |
+          brew test-bot --only-formulae \
+            --tap="$GITHUB_REPOSITORY" \
+            --testing-formulae \
+            drpedapati/tap/irl \
+            drpedapati/tap/sciclaw-docx-review \
+            drpedapati/tap/sciclaw-pubmed-cli \
+            drpedapati/tap/sciclaw-quarto \
+            drpedapati/tap/sciclaw
 
       - name: Upload bottles as artifact
         if: always()
