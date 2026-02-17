@@ -2,7 +2,7 @@ class Sciclaw < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
   url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.28.tar.gz"
-  sha256 "543f115756bc90c9cb4aec420145be6849d347f0b758ea03d06ba65eaa3f4282"
+  sha256 "594b1ef5c61d2dac5e0e16a327857b7d22d30e32311de5337973ffb2b2c49385"
   license "MIT"
 
   depends_on "go" => :build
@@ -25,8 +25,8 @@ class Sciclaw < Formula
   end
 
   test do
-    assert_match "Usage:", shell_output("#{bin}/sciclaw --help")
-    assert_match "Usage:", shell_output("#{bin}/picoclaw --help")
+    assert_match "Usage:", shell_output("#{bin}/sciclaw 2>&1", 1)
+    assert_match "Usage:", shell_output("#{bin}/picoclaw 2>&1", 1)
     assert_match "v#{version}", shell_output("#{bin}/sciclaw --version")
     assert_match "ripgrep", shell_output("#{Formula["ripgrep"].opt_bin}/rg --version")
     assert_match "irl", shell_output("#{Formula["irl"].opt_bin}/irl --version 2>&1")

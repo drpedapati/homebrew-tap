@@ -1,13 +1,38 @@
 name: brew test-bot
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
+  workflow_dispatch:
 
 jobs:
-  test-bot:
+  tap-syntax:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-22.04
+    permissions:
+      actions: read
+      checks: read
+      contents: read
+      pull-requests: read
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cache Homebrew Bundler RubyGems
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: tap-syntax-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: tap-syntax-rubygems-
+
+      - run: brew test-bot --only-cleanup-before
+      - run: brew test-bot --only-setup
+      - run: brew test-bot --only-tap-syntax
+
+  test-bot-full:
+    if: github.event_name == 'workflow_dispatch'
     strategy:
       matrix:
         os: [ubuntu-22.04, macos-15-intel, macos-26]
@@ -36,11 +61,18 @@ jobs:
       - run: brew test-bot --only-setup
 
       - run: brew test-bot --only-tap-syntax
-      - run: brew test-bot --only-formulae
-        if: github.event_name == 'pull_request'
+      - run: |
+          brew test-bot --only-formulae \
+            --tap="$GITHUB_REPOSITORY" \
+            --testing-formulae \
+            drpedapati/tap/irl \
+            drpedapati/tap/sciclaw-docx-review \
+            drpedapati/tap/sciclaw-pubmed-cli \
+            drpedapati/tap/sciclaw-quarto \
+            drpedapati/tap/sciclaw
 
       - name: Upload bottles as artifact
-        if: always() && github.event_name == 'pull_request'
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: bottles_${{ matrix.os }}

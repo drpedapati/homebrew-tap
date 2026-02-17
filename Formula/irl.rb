@@ -3,6 +3,8 @@ class Irl < Formula
   homepage "https://github.com/drpedapati/irl-template"
   version "0.5.17"
   license "MIT"
+  source_url = "https://github.com/drpedapati/irl-template/archive/refs/tags/v0.5.17.tar.gz"
+  source_sha256 = "2cdddd8f4e56f9e8fe3b278446a3f716ea4c5506b51b6c7d74c177c523d58aeb"
 
   on_macos do
     on_arm do
@@ -21,10 +23,20 @@ class Irl < Formula
       url "https://github.com/drpedapati/irl-template/releases/download/v0.5.17/irl-linux-amd64"
       sha256 "3cd4ceda734027d77ba8bde1d8413848f498cf41ca3d59ee4b491eade5dcd98a"
     end
+
+    on_arm do
+      url source_url
+      sha256 source_sha256
+      depends_on "go" => :build
+    end
   end
 
   def install
-    bin.install Dir["irl-*"].first => "irl"
+    if (buildpath/"main.go").exist?
+      system "go", "build", *std_go_args(output: bin/"irl"), "."
+    else
+      bin.install Dir["irl-*"].first => "irl"
+    end
   end
 
   test do
