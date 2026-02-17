@@ -1,14 +1,32 @@
 class Sciclaw < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.35.tar.gz"
-  sha256 "55c58ffb8bbce18739a98054f60aff1e8dd74677c9bc80445cf64fc46f362f36"
+  version "0.1.36"
   license "MIT"
 
-  depends_on "go" => :build
+  on_macos do
+    on_arm do
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.36/sciclaw-darwin-arm64"
+      sha256 "e192414a7bb98cffb22bcb83aab845543dab3ec3977d70ff8ea364a5fb6ba125"
+    end
+  end
 
   on_linux do
+    on_arm do
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.36/sciclaw-linux-arm64"
+      sha256 "bb3b579051c06eee5ce0d065c1b260e261eeb07273b582b8b73dfb31cec758b5"
+    end
+    on_intel do
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.36/sciclaw-linux-amd64"
+      sha256 "aaaf9927938bf45053e1d2468abfc596696f772b1a54e73a3352f881c91f9f38"
+    end
     depends_on "sciclaw-quarto"
+  end
+
+  # Source archive provides skills and workspace templates
+  resource "source" do
+    url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.36.tar.gz"
+    sha256 "007f6f0e60168ade53915706abd5d4976184fc97945646cbe39e4c18077be463"
   end
 
   depends_on "irl"
@@ -17,12 +35,21 @@ class Sciclaw < Formula
   depends_on "sciclaw-pubmed-cli"
 
   def install
-    ENV["CGO_ENABLED"] = "0"
-    ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(output: bin/"sciclaw", ldflags: ldflags), "./cmd/picoclaw"
+    # Install pre-compiled binary
+    if OS.mac?
+      bin.install "sciclaw-darwin-arm64" => "sciclaw"
+    elsif OS.linux? && Hardware::CPU.arm?
+      bin.install "sciclaw-linux-arm64" => "sciclaw"
+    else
+      bin.install "sciclaw-linux-amd64" => "sciclaw"
+    end
     (bin/"picoclaw").make_symlink bin/"sciclaw"
-    pkgshare.install "skills"
-    (pkgshare/"templates"/"workspace").install Dir["pkg/workspacetpl/templates/workspace/*.md"]
+
+    # Install skills and workspace templates from source
+    resource("source").stage do
+      pkgshare.install "skills"
+      (pkgshare/"templates"/"workspace").install Dir["pkg/workspacetpl/templates/workspace/*.md"]
+    end
   end
 
   test do
