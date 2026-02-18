@@ -55,3 +55,10 @@ brew reinstall drpedapati/tap/sciclaw-pubmed-cli
 brew reinstall drpedapati/tap/irl
 brew reinstall drpedapati/tap/sciclaw-quarto
 ```
+
+If `docx-review` linking conflicts (because `drpedapati/tools/docx-review` is also installed), run:
+
+```bash
+brew unlink docx-review
+brew link --overwrite sciclaw-docx-review
+```
