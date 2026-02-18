@@ -2,6 +2,7 @@ class Irl < Formula
   desc "CLI for creating Idempotent Research Loop (IRL) projects"
   homepage "https://github.com/drpedapati/irl-template"
   version "0.5.17"
+  version_scheme 1
   license "MIT"
 
   on_macos do
