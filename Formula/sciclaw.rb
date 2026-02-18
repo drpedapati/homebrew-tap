@@ -1,32 +1,32 @@
 class Sciclaw < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.1.42"
+  version "0.1.43"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.42/sciclaw-darwin-arm64"
-      sha256 "4bf61e65c1f2272736e26baaf277eb43253e90f94cd7c0ff53c04887b7f32712"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.43/sciclaw-darwin-arm64"
+      sha256 "cc2e203896330e0aeb92e9895857b23dd89bef2e393f1281f01163d494361b51"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.42/sciclaw-linux-arm64"
-      sha256 "48509734ac590515bc06c735fe8af26906a774fde3091cf8b98a2b861e18774f"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.43/sciclaw-linux-arm64"
+      sha256 "acd7b61bd5d560a58095c458d52006fb58376715e8ba90266abe6c5f4c5108f2"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.42/sciclaw-linux-amd64"
-      sha256 "5947f6024d6547a7a91641ec6b4390bc04d9788c165e9e52c91100babf1d4417"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.43/sciclaw-linux-amd64"
+      sha256 "cab7ebe1ecdc28f82887b1e41e885f907a8bc9f0ddfea8660dce7523ae48fca4"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.42.tar.gz"
-    sha256 "2e3d7f7da786372d45dd8772840b086da10a6153f776f0e2ba408a35449d1a2f"
+    url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.43.tar.gz"
+    sha256 "d1399439d7e89c397ec3e57099dbb38f5cb8907e79c1d91582872a49cf814bd5"
   end
 
   depends_on "irl"
@@ -52,6 +52,34 @@ class Sciclaw < Formula
       pkgshare.install "skills"
       (pkgshare/"templates"/"workspace").install Dir["pkg/workspacetpl/templates/workspace/*.md"]
     end
+  end
+
+  def post_install
+    return unless service_definition_installed?
+
+    unless quiet_system(bin/"sciclaw", "service", "refresh")
+      opoo "sciClaw service refresh could not be applied automatically. Run: sciclaw service refresh"
+    end
+  end
+
+  def service_definition_installed?
+    if OS.mac?
+      (Pathname.new(Dir.home)/"Library"/"LaunchAgents"/"io.sciclaw.gateway.plist").exist?
+    elsif OS.linux?
+      (Pathname.new(Dir.home)/".config"/"systemd"/"user"/"sciclaw-gateway.service").exist?
+    else
+      false
+    end
+  end
+
+  def caveats
+    <<~EOS
+      If you use the sciClaw background gateway service, this formula attempts
+      to refresh the service automatically on upgrade.
+
+      If your environment blocks that step (no user service session), run:
+        sciclaw service refresh
+    EOS
   end
 
   test do
