@@ -44,3 +44,14 @@ brew update
 brew upgrade irl
 brew upgrade sciclaw
 ```
+
+## Legacy Migration (versionless installs)
+
+If Homebrew reports legacy version numbers like `64` for companion formulas, run a one-time reinstall:
+
+```bash
+brew reinstall drpedapati/tap/sciclaw-docx-review
+brew reinstall drpedapati/tap/sciclaw-pubmed-cli
+brew reinstall drpedapati/tap/irl
+brew reinstall drpedapati/tap/sciclaw-quarto
+```
