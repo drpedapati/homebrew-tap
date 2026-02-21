@@ -4,6 +4,14 @@ class SciclawDev < Formula
   version "0.1.53-dev.1"
   license "MIT"
 
+  depends_on "imagemagick"
+  depends_on "irl"
+  depends_on "pandoc"
+  depends_on "ripgrep"
+  depends_on "sciclaw-docx-review"
+  depends_on "sciclaw-pubmed-cli"
+  depends_on "uv"
+
   on_macos do
     on_arm do
       url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.53-dev.1/sciclaw-darwin-arm64"
@@ -28,15 +36,6 @@ class SciclawDev < Formula
     url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.53-dev.1.tar.gz"
     sha256 "bf8f9b952702ceb1f773a6c2dacf12a91431192593a7ebe9ca58d6b535bf9e00"
   end
-
-  depends_on "irl"
-  depends_on "imagemagick"
-  depends_on "pandoc"
-  depends_on "ripgrep"
-  depends_on "uv"
-  depends_on "sciclaw-docx-review"
-  depends_on "sciclaw-pubmed-cli"
-  conflicts_with "sciclaw", because: "both install the sciclaw and picoclaw commands"
 
   def install
     # Install pre-compiled binary
