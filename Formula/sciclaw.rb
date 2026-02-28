@@ -1,41 +1,41 @@
 class Sciclaw < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.1.68"
+  version "0.1.69"
   license "MIT"
+
+  depends_on "imagemagick"
+  depends_on "irl"
+  depends_on "pandoc"
+  depends_on "ripgrep"
+  depends_on "sciclaw-docx-review"
+  depends_on "sciclaw-pubmed-cli"
+  depends_on "uv"
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.68/sciclaw-darwin-arm64"
-      sha256 "5ec1f3f2cab45818a319f25aac6c10fcce43f348e0fe43f8b79d18e0c610dc12"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.69/sciclaw-darwin-arm64"
+      sha256 "27682be4ca208e90cc771396926935805b5a52b70603676c7c05007885a2de72"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.68/sciclaw-linux-arm64"
-      sha256 "a1701360a2c159c456554bb1c843a909b0840109ae5bb0d6e76335dddad90bc0"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.69/sciclaw-linux-arm64"
+      sha256 "714b2797169061f5ae9436bf2a1dfd4e0c1dac6013ff174f91535449bb09a440"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.68/sciclaw-linux-amd64"
-      sha256 "895ca317518690884b01c930f6269b47bf4affedaaec05ab5d27429876eedc6a"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.1.69/sciclaw-linux-amd64"
+      sha256 "3d07c7a319990f92365c37f2e1be69570861ec78599492cca52045aad1d7f62a"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.68.tar.gz"
-    sha256 "7dc15576575b0a37fec533436b6735eb73a2ca5b246484eeb6f2cd9cf0989115"
+    url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.1.69.tar.gz"
+    sha256 "7e656553a4a43689aad54eaaa078f8d9ffa16a606cf88cd4cc6096a666c698fa"
   end
-
-  depends_on "irl"
-  depends_on "imagemagick"
-  depends_on "pandoc"
-  depends_on "ripgrep"
-  depends_on "uv"
-  depends_on "sciclaw-docx-review"
-  depends_on "sciclaw-pubmed-cli"
 
   def install
     # Install pre-compiled binary
