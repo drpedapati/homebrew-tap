@@ -8,24 +8,24 @@ class DocxReview < Formula
   on_macos do
     on_arm do
       url "https://github.com/drpedapati/docx-review/releases/download/v1.4.0/docx-review-darwin-arm64"
-      sha256 "09406a71ff8763c63146747b68ace6af70a52a4d4f7b81246c6cb6b214cc0876"
+      sha256 "00575211e8f2d04a7c39457fcc687153b3f2e81d6f91723c01cd04f3ec5f9d04"
     end
 
     on_intel do
       url "https://github.com/drpedapati/docx-review/releases/download/v1.4.0/docx-review-darwin-amd64"
-      sha256 "3d6f187f12067fd2ebc75e1a3ca0f6497756d51c3847009e8dd347661fb63e73"
+      sha256 "324b083a646652868cf95230dec3e49ac2cb736d0ea01b05f8c925cbb1a95a15"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/drpedapati/docx-review/releases/download/v1.4.0/docx-review-linux-arm64"
-      sha256 "b4e8bda6d2fd0cea4ccced139792a36a43031cd830fd59735523a4af08737247"
+      sha256 "4577b4741cf29cec10a03c3df8292e06419eef00059b71d57c8610aee1220fb6"
     end
 
     on_intel do
       url "https://github.com/drpedapati/docx-review/releases/download/v1.4.0/docx-review-linux-amd64"
-      sha256 "5003fa3d2a79b5cdf3c4871d9b4f5c3a928539222351c86ff6e536993d242b6c"
+      sha256 "c99b10a42b4e72fb8cd6772575eb2ef2302dc25b9e99e8248506238b27e53744"
     end
   end
 
