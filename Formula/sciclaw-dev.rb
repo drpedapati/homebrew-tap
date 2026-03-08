@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.0-dev.11"
+  version "0.2.0-dev.12"
   license "MIT"
 
   depends_on "imagemagick"
@@ -14,27 +14,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.0-dev.11/sciclaw-darwin-arm64"
-      sha256 "162d0116bc8401e7d724a7d89f52e6f5a6ab30233842f64f01cef886358ed63c"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.0-dev.12/sciclaw-darwin-arm64"
+      sha256 "aa57f7febdd38facfdee5aeb6aa2d96667d3f5229b0b085d227523018d692cf2"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.0-dev.11/sciclaw-linux-arm64"
-      sha256 "6fe9e9f497837c7361e5c8fc37b5bcccc5e3a869d8c69712a0ea44e1aef06a44"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.0-dev.12/sciclaw-linux-arm64"
+      sha256 "8db8189717f4cbd4776fe7934b1c9c18a24cc51717dafbec1c3d04b12a8c7a29"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.0-dev.11/sciclaw-linux-amd64"
-      sha256 "649f3303e7248af2f6c75eb4cbbcba01ce1fd4a2e565d8f55afffeea31afb740"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.0-dev.12/sciclaw-linux-amd64"
+      sha256 "667d1d3341adbfc371d1730fc320bc74467385ef5ed18b4dc82678e2b38efdb6"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.0-dev.11/source-sciclaw-v0.2.0-dev.11-source.tar.gz"
-    sha256 "eef61a66399f8724f3ab2cc8ab450b1f967edf273725631a66641425a8d0853c"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.0-dev.12/source-sciclaw-v0.2.0-dev.12-source.tar.gz"
+    sha256 "2e1a6a08f0f06b3290593a71e3e4e59c9e8198b474965c14214ec415d5da7d13"
   end
 
   def install
