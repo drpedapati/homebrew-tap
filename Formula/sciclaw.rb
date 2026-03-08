@@ -15,18 +15,18 @@ class Sciclaw < Formula
   on_macos do
     on_arm do
       url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.1/sciclaw-darwin-arm64"
-      sha256 "fbfb81292088f90e4e934a7b8807553d3f86bbc54ae826ab4de2979e3d8e6b10"
+      sha256 "1a32ceffc64dac19c5c549a140369a0a7c84c32fd8d9840f386cf9ee09e2f170"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.1/sciclaw-linux-arm64"
-      sha256 "268160ec2b20edf7505d76c3c4f3ce7766aaa82794c3428af044530377170010"
+      sha256 "fb63f4347925f48f15c4d23e828cc6249d721fce073d2d69330b20172e6ad9b3"
     end
     on_intel do
       url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.1/sciclaw-linux-amd64"
-      sha256 "1193094cbdbf3d04f2d6b43114236132973db319acd4e8a9d184dd9b52fa6aab"
+      sha256 "645ad233b8fbab0bd24860fd2a02bc45e7ac00a7e20ac98c3d4185fe1809a43e"
     end
     depends_on "sciclaw-quarto"
   end
