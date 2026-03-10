@@ -1,6 +1,11 @@
 # Homebrew Tap
 
-Homebrew formulas for IRL (Idempotent Research Loop) tools and sciClaw.
+Primary Homebrew tap for `sciClaw`, `sciClaw-dev`, `irl`, and the `sciclaw-*` companion formulas used by the main sciClaw install.
+
+This tap is intentionally separate from `drpedapati/tools`:
+- `drpedapati/tap` installs `sciclaw`, `sciclaw-dev`, `irl`, and `sciclaw-*` companion formulas
+- `drpedapati/tools` installs standalone utilities like `docx-review`, `pubmed-cli`, `pdf-form-filler`, and `phi-cleaner`
+- deprecated legacy tap: `drpedapati/sciclaw` (users should untap it if still present)
 
 ## Installation
 
@@ -15,9 +20,11 @@ brew install irl
 |---------|-------------|
 | `irl` | CLI for creating IRL research projects with auto-naming |
 | `sciclaw` | Paired scientist CLI that uses IRL for project lifecycle |
+| `sciclaw-dev` | Development channel for sciClaw prereleases |
 | `sciclaw-docx-review` | Installs `docx-review` binary without colliding with other taps |
 | `sciclaw-pubmed-cli` | Installs `pubmed` and `pubmed-cli` binaries without colliding with other taps |
 | `sciclaw-quarto` | Installs Quarto CLI on Linux (macOS users should prefer `brew install --cask quarto`) |
+| `docx-review` | Legacy convenience formula; prefer `drpedapati/tools/docx-review` for standalone installs |
 
 ## Usage
 
@@ -44,6 +51,13 @@ brew update
 brew upgrade irl
 brew upgrade sciclaw
 ```
+
+## Relationship To Other Repos
+
+- Website and docs: `https://sciclaw.dev`
+- Source repo and releases: `https://github.com/drpedapati/sciclaw`
+- Standalone tool tap: `https://github.com/drpedapati/homebrew-tools`
+- Deprecated legacy tap: `https://github.com/drpedapati/homebrew-sciclaw`
 
 ## Legacy Migration (versionless installs)
 
