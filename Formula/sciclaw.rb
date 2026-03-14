@@ -9,7 +9,9 @@ class Sciclaw < Formula
   depends_on "pandoc"
   depends_on "ripgrep"
   depends_on "sciclaw-docx-review"
+  depends_on "sciclaw-pptx-review"
   depends_on "sciclaw-pubmed-cli"
+  depends_on "sciclaw-xlsx-review"
   depends_on "uv"
 
   on_macos do
@@ -94,7 +96,9 @@ class Sciclaw < Formula
       assert_match(/\d+\.\d+\.\d+/, shell_output("#{Formula["sciclaw-quarto"].opt_bin}/quarto --version").strip)
     end
     assert_match "docx-review", shell_output("#{Formula["sciclaw-docx-review"].opt_bin}/docx-review --version")
+    assert_match "pptx-review", shell_output("#{Formula["sciclaw-pptx-review"].opt_bin}/pptx-review --version")
     assert_match "PubMed", shell_output("#{Formula["sciclaw-pubmed-cli"].opt_bin}/pubmed --help")
+    assert_match "xlsx-review", shell_output("#{Formula["sciclaw-xlsx-review"].opt_bin}/xlsx-review --version")
     ENV["HOME"] = testpath
     system bin/"sciclaw", "onboard", "--yes"
     assert_path_exists testpath/"sciclaw/AGENTS.md"
