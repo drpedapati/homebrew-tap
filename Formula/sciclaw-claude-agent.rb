@@ -2,10 +2,10 @@ class SciclawClaudeAgent < Formula
   desc "Claude Agent SDK bridge for sciClaw Claude OAuth users"
   homepage "https://github.com/drpedapati/sciclaw-claude-agent"
   license "MIT"
-  version "0.1.2"
+  version "0.1.3"
 
-  url "https://github.com/drpedapati/sciclaw-claude-agent/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "968070aef91e4a52ab74ea5c13af91a6b53884823f79f0b8338fc6f0ebb32a57"
+  url "https://github.com/drpedapati/sciclaw-claude-agent/archive/refs/tags/v0.1.3.tar.gz"
+  sha256 "016e9114420aa20e6739b5a6f30b3ca098f8c39599c9fefc7f6ed8c08645ad28"
 
   depends_on "node"
 
