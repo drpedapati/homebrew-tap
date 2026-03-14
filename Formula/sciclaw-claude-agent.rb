@@ -17,11 +17,16 @@ class SciclawClaudeAgent < Formula
   def install
     libexec.install "bin", "src", "package.json", "README.md"
 
-    sdk_target = libexec/"node_modules"/"@anthropic-ai"/"claude-agent-sdk"
-    sdk_target.parent.mkpath
+    # Keep the real SDK payload on a shorter path so Homebrew's Mach-O
+    # install-name rewriting does not overflow the native module headers.
+    sdk_target = libexec/"sdk"
     resource("claude-agent-sdk").stage do
       sdk_target.install Dir["*"]
     end
+
+    sdk_link_parent = libexec/"node_modules"/"@anthropic-ai"
+    sdk_link_parent.mkpath
+    sdk_link_parent.install_symlink sdk_target => "claude-agent-sdk"
 
     (bin/"sciclaw-claude-agent").write_env_script libexec/"bin/sciclaw-claude-agent.js",
       NODE_PATH: libexec/"node_modules",
