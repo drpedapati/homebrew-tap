@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.4-dev.10"
+  version "0.2.4-dev.11"
   license "MIT"
 
   depends_on "imagemagick"
@@ -17,27 +17,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.10/sciclaw-darwin-arm64"
-      sha256 "6c9c74d7bf77bced1c4ad81c77d4ab496c18ff940409e542fc20847c231b3ae1"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.11/sciclaw-darwin-arm64"
+      sha256 "10d70bfaa26d8d2bd961c6b03a6191b8d393f1727d0c33e35239785555b09672"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.10/sciclaw-linux-arm64"
-      sha256 "e9c7546b57c32ae3020704e1dcb4461a87cee4917bfff18e6c8bcdf3c5c47607"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.11/sciclaw-linux-arm64"
+      sha256 "afc7e8687f0950dede985ba48af9ecced663af38addb317d9c0cd59ecf433cb3"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.10/sciclaw-linux-amd64"
-      sha256 "63ca832b0751aea15ee79acdaf2e37de47bbf4dbb0219df26459a316b1049db5"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.11/sciclaw-linux-amd64"
+      sha256 "8d6517b44428aba006fdf508b4281873f031ecd0bc198fabcf53788ecf853358"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.10/source-sciclaw-v0.2.4-dev.10-source.tar.gz"
-    sha256 "5b9dcfd6ecba005f4327af6c556af95f2b22dade408d1f52e39b335d81781efe"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.11/source-sciclaw-v0.2.4-dev.11-source.tar.gz"
+    sha256 "ea4b44bb7717aca4ce8f71679553d5fe7bbdd067ff73ad925d83e8cd41cd6526"
   end
 
   def install
