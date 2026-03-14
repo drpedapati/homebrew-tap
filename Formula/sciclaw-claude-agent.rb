@@ -20,7 +20,7 @@ class SciclawClaudeAgent < Formula
     sdk_target = libexec/"node_modules"/"@anthropic-ai"/"claude-agent-sdk"
     sdk_target.parent.mkpath
     resource("claude-agent-sdk").stage do
-      mv "package", sdk_target
+      sdk_target.install Dir["*"]
     end
 
     (bin/"sciclaw-claude-agent").write_env_script libexec/"bin/sciclaw-claude-agent.js",
