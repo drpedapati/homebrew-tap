@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.4-dev.9"
+  version "0.2.4-dev.10"
   license "MIT"
 
   depends_on "imagemagick"
@@ -17,27 +17,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.9/sciclaw-darwin-arm64"
-      sha256 "a9345c32bcf8cebaa24f187beaa5da01f9172a6fbf8700fec0182b556e479c39"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.10/sciclaw-darwin-arm64"
+      sha256 "6c9c74d7bf77bced1c4ad81c77d4ab496c18ff940409e542fc20847c231b3ae1"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.9/sciclaw-linux-arm64"
-      sha256 "153a49975d0ecf28f15fcc5f919ea39a390c7204e23af35305aebc0d581b7567"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.10/sciclaw-linux-arm64"
+      sha256 "e9c7546b57c32ae3020704e1dcb4461a87cee4917bfff18e6c8bcdf3c5c47607"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.9/sciclaw-linux-amd64"
-      sha256 "6023c9274ae204f3483e7d4e6449be33739d7c807f13bbdb21e4b54513d99490"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.10/sciclaw-linux-amd64"
+      sha256 "63ca832b0751aea15ee79acdaf2e37de47bbf4dbb0219df26459a316b1049db5"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.9/source-sciclaw-v0.2.4-dev.9-source.tar.gz"
-    sha256 "eeebb3494ff68655b81ae97bf97c71b95a748905a305297abff3759bc5b73d8e"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.10/source-sciclaw-v0.2.4-dev.10-source.tar.gz"
+    sha256 "5b9dcfd6ecba005f4327af6c556af95f2b22dade408d1f52e39b335d81781efe"
   end
 
   def install
