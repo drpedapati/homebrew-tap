@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.4-dev.11"
+  version "0.2.4-dev.12"
   license "MIT"
 
   depends_on "imagemagick"
@@ -17,27 +17,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.11/sciclaw-darwin-arm64"
-      sha256 "10d70bfaa26d8d2bd961c6b03a6191b8d393f1727d0c33e35239785555b09672"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.12/sciclaw-darwin-arm64"
+      sha256 "9a418365dc27bdc2400723178584a88e0d1b482a07fd2b0eff53b1ae1700f4a1"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.11/sciclaw-linux-arm64"
-      sha256 "afc7e8687f0950dede985ba48af9ecced663af38addb317d9c0cd59ecf433cb3"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.12/sciclaw-linux-arm64"
+      sha256 "a775c6709f17446ae2f0c6d3d01a5ed1fbed45c5ba87a1d9bfa89b2268bbca37"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.11/sciclaw-linux-amd64"
-      sha256 "8d6517b44428aba006fdf508b4281873f031ecd0bc198fabcf53788ecf853358"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.12/sciclaw-linux-amd64"
+      sha256 "76fd66efb8fe62e41a19bcf48590a25a7a496412d724174f193b8ce9398d609a"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.11/source-sciclaw-v0.2.4-dev.11-source.tar.gz"
-    sha256 "ea4b44bb7717aca4ce8f71679553d5fe7bbdd067ff73ad925d83e8cd41cd6526"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.12/source-sciclaw-v0.2.4-dev.12-source.tar.gz"
+    sha256 "9fad1f6307c5c9292dfada8cbc36f3b4fa1376c42f349a61c0de2f372a314cff"
   end
 
   def install
