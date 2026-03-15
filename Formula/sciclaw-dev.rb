@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.4-dev.16"
+  version "0.2.4-dev.17"
   license "MIT"
 
   depends_on "imagemagick"
@@ -17,27 +17,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.16/sciclaw-darwin-arm64"
-      sha256 "85fb4d3dfb1ab6859fb248489fbd5a7ea010b18d78a727708d76003df18b641b"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.17/sciclaw-darwin-arm64"
+      sha256 "3792871ef28967d199f140e9be8577bc86551d3ff9b6b2126d387e883d57af2a"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.16/sciclaw-linux-arm64"
-      sha256 "9d8291a4aecdc5ca4d0a1bb74d93f7c981c30bded3b3d7e08a326b180057c3d7"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.17/sciclaw-linux-arm64"
+      sha256 "b58b342283cf831cb6564889c710d5e2d658e062feecdaad724304479b0d4788"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.16/sciclaw-linux-amd64"
-      sha256 "2828bd9cff2f8bb5e2f81507c0858da0791e7d40bc32b0285b77ce5245420c65"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.17/sciclaw-linux-amd64"
+      sha256 "c6e3572e36a48b878a36e8dac83315ecc35c7c7df299272f1ba0615820cf2fab"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.16/source-sciclaw-v0.2.4-dev.16-source.tar.gz"
-    sha256 "577cbb232b9fb56a8397a550cb4351f2eec3b3bad716568e64faaf32e9fc78ca"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.17/source-sciclaw-v0.2.4-dev.17-source.tar.gz"
+    sha256 "8b75176d21e06480b887b9f3840dd22427013c6291d1583943360d1eefe44cac"
   end
 
   def install
