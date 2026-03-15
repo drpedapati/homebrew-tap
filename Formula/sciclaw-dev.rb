@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.4-dev.18"
+  version "0.2.4-dev.19"
   license "MIT"
 
   depends_on "imagemagick"
@@ -17,27 +17,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.18/sciclaw-darwin-arm64"
-      sha256 "ac573217dcee828190f2e45bdf1e42aa8600b4b29a8b502fa2b60c569e853153"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.19/sciclaw-darwin-arm64"
+      sha256 "53c6b99adc783dc8e337dad569f0eac456a4345496f146a06106eb4acf0d4d32"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.18/sciclaw-linux-arm64"
-      sha256 "99a7f3311f3868c840f42b4ebb24d35154c73d8b007d84f9f18073e099b864d1"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.19/sciclaw-linux-arm64"
+      sha256 "e398e292ab6e1b7ad7b53624e6790ecffdc9c88865fd017359e15f83c984dd02"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.18/sciclaw-linux-amd64"
-      sha256 "391e0599dee8a694b8f760459224e5272bdabc6ba4d1b1839eaa0326258f7cd7"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.19/sciclaw-linux-amd64"
+      sha256 "24a20818cea3722775b0c59b3b5c71678bd596a3878547e087f5b2c975ddd622"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.18/source-sciclaw-v0.2.4-dev.18-source.tar.gz"
-    sha256 "1e860fa22bf3f6b757baa8bb0cecf95368d285d33beead1b3a7027ecdf0c4679"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.19/source-sciclaw-v0.2.4-dev.19-source.tar.gz"
+    sha256 "f246dd3eb6f92091ecd3f90ec313a68e5f34fbd1707be47fd392849dd117c8da"
   end
 
   def install
