@@ -3,6 +3,7 @@ class Sciclaw < Formula
   homepage "https://github.com/drpedapati/sciclaw"
   version "0.2.4"
   license "MIT"
+  revision 1
 
   depends_on "imagemagick"
   depends_on "irl"
@@ -12,6 +13,7 @@ class Sciclaw < Formula
   depends_on "sciclaw-pptx-review"
   depends_on "sciclaw-pubmed-cli"
   depends_on "sciclaw-xlsx-review"
+  depends_on "sciclaw-claude-agent"
 
   depends_on "uv"
 
@@ -100,6 +102,7 @@ class Sciclaw < Formula
     assert_match "pptx-review", shell_output("#{Formula["sciclaw-pptx-review"].opt_bin}/pptx-review --version")
     assert_match "xlsx-review", shell_output("#{Formula["sciclaw-xlsx-review"].opt_bin}/xlsx-review --version")
     assert_match "PubMed", shell_output("#{Formula["sciclaw-pubmed-cli"].opt_bin}/pubmed --help")
+    assert_match "stdin/stdout bridge", shell_output("#{Formula["sciclaw-claude-agent"].opt_bin}/sciclaw-claude-agent --help")
 
     ENV["HOME"] = testpath
     system bin/"sciclaw", "onboard", "--yes"
