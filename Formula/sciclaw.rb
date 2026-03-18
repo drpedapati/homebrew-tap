@@ -1,9 +1,8 @@
 class Sciclaw < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.4"
+  version "0.2.5"
   license "MIT"
-  revision 1
 
   depends_on "imagemagick"
   depends_on "irl"
@@ -14,32 +13,31 @@ class Sciclaw < Formula
   depends_on "sciclaw-pubmed-cli"
   depends_on "sciclaw-xlsx-review"
   depends_on "sciclaw-claude-agent"
-
   depends_on "uv"
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4/sciclaw-darwin-arm64"
-      sha256 "68331a653cf2ef06e69d6dc2ebd82cc080e430ab46fb18dec708583e278589d5"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5/sciclaw-darwin-arm64"
+      sha256 "f82f7c2530a442cda322414d204ab08e3bed186fcc4b1caf71a0b5f15854624b"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4/sciclaw-linux-arm64"
-      sha256 "84c80af5d8fc45981b6a3a83e6a08b93a233817b918b9535574e8006d4985f66"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5/sciclaw-linux-arm64"
+      sha256 "53e07cc062a31016e2f95174529948c67fef68c8a77410fe9b74a04a6838c4b6"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4/sciclaw-linux-amd64"
-      sha256 "432c37303d68187bd30a16a6d440a5a115510f4c6cd5decc00912b51867aec56"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5/sciclaw-linux-amd64"
+      sha256 "d49f9551b87a8b82ff46ba82d3af03201e947064a2aa31a5676b2edb1108327a"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4/source-sciclaw-v0.2.4-source.tar.gz"
-    sha256 "65d5a9d89e1860350acda6344258718cddfe96296fd21fbf94c39ca37bf80a3a"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5/source-sciclaw-v0.2.5-source.tar.gz"
+    sha256 "04eee9e0d11cab72a7b1244a34bd5f780ba4de102455a14fe42523d8bd97a049"
   end
 
   def install
@@ -103,7 +101,6 @@ class Sciclaw < Formula
     assert_match "xlsx-review", shell_output("#{Formula["sciclaw-xlsx-review"].opt_bin}/xlsx-review --version")
     assert_match "PubMed", shell_output("#{Formula["sciclaw-pubmed-cli"].opt_bin}/pubmed --help")
     assert_match "stdin/stdout bridge", shell_output("#{Formula["sciclaw-claude-agent"].opt_bin}/sciclaw-claude-agent --help")
-
     ENV["HOME"] = testpath
     system bin/"sciclaw", "onboard", "--yes"
     assert_path_exists testpath/"sciclaw/AGENTS.md"
