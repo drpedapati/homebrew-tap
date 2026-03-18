@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.4-dev.26"
+  version "0.2.4-dev.27"
   license "MIT"
 
   depends_on "imagemagick"
@@ -17,27 +17,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.26/sciclaw-darwin-arm64"
-      sha256 "f4d7da7d7dec86afc695ece27dff68fefc2d911e52502daad73c7e4be85ba376"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.27/sciclaw-darwin-arm64"
+      sha256 "bf4fee14b01f7a18c85acf53f6fb50d2b0e8a8dd95d3deb94cc9ebb9dceb44e1"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.26/sciclaw-linux-arm64"
-      sha256 "25320bc259cc15e2cdedb0f74c715d7ccfc3ed95ae014083648dc3c1081e7009"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.27/sciclaw-linux-arm64"
+      sha256 "d0414616f1b3e461df2035ad3e5a4e2d844e08bea89fb57b93bec339d22af9b8"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.26/sciclaw-linux-amd64"
-      sha256 "a3ad6d18c7bc7fed2b76f917045a0cba0aa6074eab44945dcd5a1aeca455d062"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.27/sciclaw-linux-amd64"
+      sha256 "4666b0f43b1915d72b9f9bc1dab60f054b855a741adde81d1089551c96c1db73"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.26/source-sciclaw-v0.2.4-dev.26-source.tar.gz"
-    sha256 "946688f2af3c7b8c36906655f69e4433f0b74addac9206a373b9561a16579207"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.27/source-sciclaw-v0.2.4-dev.27-source.tar.gz"
+    sha256 "7aa86bee1b3a1ca98c0777a8d81c65dbf5b01c2ccbcff9c39c498dcb0ab2276c"
   end
 
   def install
