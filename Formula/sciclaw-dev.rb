@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.4-dev.28"
+  version "0.2.5-dev.1"
   license "MIT"
 
   depends_on "imagemagick"
@@ -17,27 +17,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.28/sciclaw-darwin-arm64"
-      sha256 "4d754f27cb458a05c247f321f3420a73c34c0ef5569ba615c16e1f4bd28da074"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.1/sciclaw-darwin-arm64"
+      sha256 "0ff42686308f7835f03919e1fc1de84ae5b0188af218dfce5f2e309d687ee1f9"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.28/sciclaw-linux-arm64"
-      sha256 "ade418284853b41320bb87e2981e5662ea6bd71394438e4ddaef32ff52e804a9"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.1/sciclaw-linux-arm64"
+      sha256 "ede7ee133b11856889c9df79439229336ff8b409b5f04cfb10e296933af37dbb"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.28/sciclaw-linux-amd64"
-      sha256 "e189f249b03f923630247e7a00c560c3e6ecacfc8319408f4b75811b294c2afe"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.1/sciclaw-linux-amd64"
+      sha256 "654f64e3f04e5301945102cea25dc37756ef84b4b21a27a4bc5819da2b84a306"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.4-dev.28/source-sciclaw-v0.2.4-dev.28-source.tar.gz"
-    sha256 "835a6f2ebe353cf3fdeee402101b6cdcd87368fa04797002251a19daa533d97b"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.1/source-sciclaw-v0.2.5-dev.1-source.tar.gz"
+    sha256 "2f9fa3a379c7426a27d3b1dc7a4576c6d2c3aeee17c038de8c078b9041f571b2"
   end
 
   def install
