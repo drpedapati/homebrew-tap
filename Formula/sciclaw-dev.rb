@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.5-dev.11"
+  version "0.2.5-dev.12"
   license "MIT"
 
   depends_on "imagemagick"
@@ -17,27 +17,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.11/sciclaw-darwin-arm64"
-      sha256 "ee29a51ac07e70e5bd888818fd6a8868b7ca9c6811a4626cacf9d0acf7e8ce1e"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.12/sciclaw-darwin-arm64"
+      sha256 "aa5b74c191e2d934eeeeae4946572c33b2188cd2ac05ac680b7a853291939f5e"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.11/sciclaw-linux-arm64"
-      sha256 "01d0c364c6a1fb45f5246d6c5f5640e7669e348d86f09f176fee370559439f26"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.12/sciclaw-linux-arm64"
+      sha256 "295fe585c0bb447641fbef96341a5aa465cea040153a169f13458ee237fbd608"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.11/sciclaw-linux-amd64"
-      sha256 "43d819fbcdd9f5c8b84e9da50a69bfef1c29a2dc012c6f1797a2d89f31fd7a25"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.12/sciclaw-linux-amd64"
+      sha256 "a0b539ca4b493036e594a517f14c8b38461c2804c2bf61e9a625fae3b69793f7"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.11/source-sciclaw-v0.2.5-dev.11-source.tar.gz"
-    sha256 "2acac28708b1306779169ad42a0223186d0680c1a43d3bbef72127a2b4bd15c3"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.12/source-sciclaw-v0.2.5-dev.12-source.tar.gz"
+    sha256 "5c891843f43b11c6312a874f013c266342546afe7a2e560da65e19a2c2f80e95"
   end
 
   def install
