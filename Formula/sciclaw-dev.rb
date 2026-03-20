@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.5-dev.8"
+  version "0.2.5-dev.9"
   license "MIT"
 
   depends_on "imagemagick"
@@ -17,27 +17,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.8/sciclaw-darwin-arm64"
-      sha256 "15472b1f423565456987217741ff5891f320bdfa556adbd7a6f24c900360090c"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.9/sciclaw-darwin-arm64"
+      sha256 "393475ddf6c31e222712e44a8f60ad65419aab8a0b8e93b82660f0b78355efb4"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.8/sciclaw-linux-arm64"
-      sha256 "5e3f1b043a65f51af5ed4739ced2b8dffb630c63a6d3aba36de8739482ddd60a"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.9/sciclaw-linux-arm64"
+      sha256 "aba57d60350a3eef65c33ed2e929397bdef195598a539b15351f3ab70a7f478a"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.8/sciclaw-linux-amd64"
-      sha256 "a5ed5754cb34c3a3731252be38aa6f0b0d6ca723831ecf700982343cffb2cc80"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.9/sciclaw-linux-amd64"
+      sha256 "236c2d2ec4e670ce1579502a5c05fa3af6ab4923dc98d12501ac8f9049956dbd"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.8/source-sciclaw-v0.2.5-dev.8-source.tar.gz"
-    sha256 "24d5d704668757a4bbaed7f5d016a9e0ce39d4776f2e0017df61a8cd253d3d04"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.9/source-sciclaw-v0.2.5-dev.9-source.tar.gz"
+    sha256 "565b71908dcb5da3dd1be978f3f2a38f71c9accabcb24be138ff7cf8d1ee58c5"
   end
 
   def install
