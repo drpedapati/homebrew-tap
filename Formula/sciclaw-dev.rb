@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.5-dev.13"
+  version "0.2.5-dev.14"
   license "MIT"
 
   depends_on "imagemagick"
@@ -17,27 +17,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.13/sciclaw-darwin-arm64"
-      sha256 "c6e0ca982a0db3a05a98cc36aedda871d85c0103e8b74a1545bcc7b3146db162"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.14/sciclaw-darwin-arm64"
+      sha256 "9dd0ef597b13c84385c21647cd406a0d1575a2ab2d097a595af71896c90f0b21"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.13/sciclaw-linux-arm64"
-      sha256 "5db8413b1624cf38d8dbb77d8a49aaa5c7366fcccde204fc654a3d5dd4103f65"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.14/sciclaw-linux-arm64"
+      sha256 "a0ede1ae5df5061d111ff508ad1aee51fe446cf999b499c6e8c5fb08f43d5cf7"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.13/sciclaw-linux-amd64"
-      sha256 "ae27d36a3a5b3447fa57a5012710563e27eea8a31c9b8a2297b517a425e7807d"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.14/sciclaw-linux-amd64"
+      sha256 "4047badf1918658191d74d4faf3e7f78492a0c9cdd47ab8d08f26f563f5aae6e"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.13/source-sciclaw-v0.2.5-dev.13-source.tar.gz"
-    sha256 "1fcce401924911427843b4fb2717761a1d410256b1eda5455b8c386a17c76a9c"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.14/source-sciclaw-v0.2.5-dev.14-source.tar.gz"
+    sha256 "b0ca493c2d36b109c29f78371e88381e47fce1b9ab8b5235fc40efd49b5699d7"
   end
 
   def install
