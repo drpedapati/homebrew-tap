@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.5-dev.10"
+  version "0.2.5-dev.11"
   license "MIT"
 
   depends_on "imagemagick"
@@ -17,27 +17,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.10/sciclaw-darwin-arm64"
-      sha256 "cc5350d20b64f7e29bf64bf6d9c03181e7666fe7c5a32c607aa0cc002cf5581b"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.11/sciclaw-darwin-arm64"
+      sha256 "ee29a51ac07e70e5bd888818fd6a8868b7ca9c6811a4626cacf9d0acf7e8ce1e"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.10/sciclaw-linux-arm64"
-      sha256 "e7a25be6073d3a306f753d1c80e6adab2e630a9427dee7268fa2d1e40fa567f9"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.11/sciclaw-linux-arm64"
+      sha256 "01d0c364c6a1fb45f5246d6c5f5640e7669e348d86f09f176fee370559439f26"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.10/sciclaw-linux-amd64"
-      sha256 "da4bef7e296f9bd18ff5a07a0103eb2e5acb368bc90ea99552586795e528a1b9"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.11/sciclaw-linux-amd64"
+      sha256 "43d819fbcdd9f5c8b84e9da50a69bfef1c29a2dc012c6f1797a2d89f31fd7a25"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.10/source-sciclaw-v0.2.5-dev.10-source.tar.gz"
-    sha256 "f078250287d34c3479b814295385861f901cebb4bea9add9f75ce859b16c56c3"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.11/source-sciclaw-v0.2.5-dev.11-source.tar.gz"
+    sha256 "2acac28708b1306779169ad42a0223186d0680c1a43d3bbef72127a2b4bd15c3"
   end
 
   def install
