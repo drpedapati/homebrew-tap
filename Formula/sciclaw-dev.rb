@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.5-dev.9"
+  version "0.2.5-dev.10"
   license "MIT"
 
   depends_on "imagemagick"
@@ -17,27 +17,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.9/sciclaw-darwin-arm64"
-      sha256 "393475ddf6c31e222712e44a8f60ad65419aab8a0b8e93b82660f0b78355efb4"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.10/sciclaw-darwin-arm64"
+      sha256 "cc5350d20b64f7e29bf64bf6d9c03181e7666fe7c5a32c607aa0cc002cf5581b"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.9/sciclaw-linux-arm64"
-      sha256 "aba57d60350a3eef65c33ed2e929397bdef195598a539b15351f3ab70a7f478a"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.10/sciclaw-linux-arm64"
+      sha256 "e7a25be6073d3a306f753d1c80e6adab2e630a9427dee7268fa2d1e40fa567f9"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.9/sciclaw-linux-amd64"
-      sha256 "236c2d2ec4e670ce1579502a5c05fa3af6ab4923dc98d12501ac8f9049956dbd"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.10/sciclaw-linux-amd64"
+      sha256 "da4bef7e296f9bd18ff5a07a0103eb2e5acb368bc90ea99552586795e528a1b9"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.9/source-sciclaw-v0.2.5-dev.9-source.tar.gz"
-    sha256 "565b71908dcb5da3dd1be978f3f2a38f71c9accabcb24be138ff7cf8d1ee58c5"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.10/source-sciclaw-v0.2.5-dev.10-source.tar.gz"
+    sha256 "f078250287d34c3479b814295385861f901cebb4bea9add9f75ce859b16c56c3"
   end
 
   def install
