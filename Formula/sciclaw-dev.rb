@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.5-dev.15"
+  version "0.2.5-dev.16"
   license "MIT"
 
   depends_on "imagemagick"
@@ -17,27 +17,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.15/sciclaw-darwin-arm64"
-      sha256 "f38e8c7d908828255835d5fb218653bc31af6819d6bf8a1275c06c37f8f9a2a2"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.16/sciclaw-darwin-arm64"
+      sha256 "8b28a2dead532e23ea231b820fb91c0fcc5ae0862521c292cba77b66af0d2cc2"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.15/sciclaw-linux-arm64"
-      sha256 "7b0b547c77454b35301852f547d9af8c431f243939344c5b79989f9808361fea"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.16/sciclaw-linux-arm64"
+      sha256 "eac1ab819daea7c3987d2100baae44b39a982ef6f07e4dd48eda34bbdd73364d"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.15/sciclaw-linux-amd64"
-      sha256 "2c357872fe7784baaf337a6de3ae6278b83d11dba45f394a7f3fd763897f1414"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.16/sciclaw-linux-amd64"
+      sha256 "568d362a5d0b802ebd85b58f2b6e680ffa98a801abd8b3ac771acce34ec012df"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.15/source-sciclaw-v0.2.5-dev.15-source.tar.gz"
-    sha256 "3dbbeec9942c492d27a4b8b4ed161513d3ba558d0b93a798571e4d833fe595f7"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.16/source-sciclaw-v0.2.5-dev.16-source.tar.gz"
+    sha256 "bec44b6041017b72f568df3a9d5000d4f3cb54d064466d39a3362d39e1e2edc2"
   end
 
   def install
