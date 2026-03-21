@@ -1,24 +1,24 @@
 class Ctxclaw < Formula
   desc "Prompt context optimizer for agent runtimes"
   homepage "https://github.com/drpedapati/ctxclaw"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/homebrew-tap/releases/download/ctxclaw-v0.1.0/ctxclaw-darwin-arm64"
-      sha256 "4b20a30cb76e272c2b661db8b7cd9209c196394e8577d04e2f12430feb28f08e"
+      url "https://github.com/drpedapati/homebrew-tap/releases/download/ctxclaw-v0.1.1/ctxclaw-darwin-arm64"
+      sha256 "c09926029a82b29ee273932dad42f500e1df7732c244bc8520821f98ff3c1c0b"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/homebrew-tap/releases/download/ctxclaw-v0.1.0/ctxclaw-linux-arm64"
-      sha256 "c633193835a8cbffbd424a76b460a030d80344d656beed96cc37089b97ad0295"
+      url "https://github.com/drpedapati/homebrew-tap/releases/download/ctxclaw-v0.1.1/ctxclaw-linux-arm64"
+      sha256 "e72e391d2593fc12567281317f7390a2e459f9063cb1e66dabe42041ac39dfd7"
     end
     on_intel do
-      url "https://github.com/drpedapati/homebrew-tap/releases/download/ctxclaw-v0.1.0/ctxclaw-linux-amd64"
-      sha256 "14d500e889596fbe7dc7cae8ea074008fa30e526c5e1dcc540bae5a2f927d969"
+      url "https://github.com/drpedapati/homebrew-tap/releases/download/ctxclaw-v0.1.1/ctxclaw-linux-amd64"
+      sha256 "cf9022c1093b7e999e06a3ee49c49e16c901e65f0b892accc09104afaa765da9"
     end
   end
 
