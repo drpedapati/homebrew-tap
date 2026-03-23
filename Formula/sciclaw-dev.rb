@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.5-dev.20"
+  version "0.2.5-dev.21"
   license "MIT"
 
   depends_on "imagemagick"
@@ -18,31 +18,29 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.20/sciclaw-darwin-arm64"
-      sha256 "d3c97965d8180f8dbe870c683f556e448f883d7b136b2230447a8f977ee0364b"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.21/sciclaw-darwin-arm64"
+      sha256 "9eedbd978eac853f7470faeea7deac7ee385386c2943b6cd2d4615284c51f284"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.20/sciclaw-linux-arm64"
-      sha256 "e756c4742e604beb3a3bf1e430b9f1208657903bffa44611bb375e041cca6114"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.21/sciclaw-linux-arm64"
+      sha256 "281213f8c7b03272fb322e63639a8977b08cc04732e1b1640b47df3b9fc3ddab"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.20/sciclaw-linux-amd64"
-      sha256 "0ea865f518376ee6306762801815c55fb5e7f2623cf6a5f9667f80c33afccbf9"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.21/sciclaw-linux-amd64"
+      sha256 "f41b52cba8caa3e64d380f376d6be2c84cbbe8a33abfa384e7e1cdaca1de4e44"
     end
     depends_on "sciclaw-quarto"
   end
 
-  # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.20/source-sciclaw-v0.2.5-dev.20-source.tar.gz"
-    sha256 "a54bd95bca01c12b712af43742c41cd962072408c3df74d99d68294bd2849c5e"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.21/source-sciclaw-v0.2.5-dev.21-source.tar.gz"
+    sha256 "c0ab5b7193e573b3d91e369d36e8288f6ead7e9d435fcd0c41bf7c2428d0d364"
   end
 
   def install
-    # Install pre-compiled binary
     if OS.mac?
       bin.install "sciclaw-darwin-arm64" => "sciclaw"
     elsif OS.linux? && Hardware::CPU.arm?
@@ -52,7 +50,6 @@ class SciclawDev < Formula
     end
     (bin/"picoclaw").make_symlink bin/"sciclaw"
 
-    # Install skills and workspace templates from source
     resource("source").stage do
       pkgshare.install "skills"
       (pkgshare/"templates"/"workspace").install Dir["pkg/workspacetpl/templates/workspace/*.md"]
