@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.5-dev.19"
+  version "0.2.5-dev.20"
   license "MIT"
 
   depends_on "imagemagick"
@@ -18,27 +18,27 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.19/sciclaw-darwin-arm64"
-      sha256 "b4e4a1acf44b3c76e31bf8270d4a935b6cd88297822e3d51287c88627c8d3bcb"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.20/sciclaw-darwin-arm64"
+      sha256 "d3c97965d8180f8dbe870c683f556e448f883d7b136b2230447a8f977ee0364b"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.19/sciclaw-linux-arm64"
-      sha256 "7f62574ca49046e2bf2a22e6aa4d70073dabe05f83a714268cf6c9394fe9ae76"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.20/sciclaw-linux-arm64"
+      sha256 "e756c4742e604beb3a3bf1e430b9f1208657903bffa44611bb375e041cca6114"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.19/sciclaw-linux-amd64"
-      sha256 "89dfafc6d1aa80bf9aeb3fc9948965a07f2b03abfdc86c6d9c2318315098ea4d"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.20/sciclaw-linux-amd64"
+      sha256 "0ea865f518376ee6306762801815c55fb5e7f2623cf6a5f9667f80c33afccbf9"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.19/source-sciclaw-v0.2.5-dev.19-source.tar.gz"
-    sha256 "53f09ef438b73f995ba99205b72681121bd6f87dd39a40b4693862565c681ba1"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.5-dev.20/source-sciclaw-v0.2.5-dev.20-source.tar.gz"
+    sha256 "a54bd95bca01c12b712af43742c41cd962072408c3df74d99d68294bd2849c5e"
   end
 
   def install
