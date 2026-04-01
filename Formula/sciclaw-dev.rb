@@ -1,7 +1,7 @@
 class SciclawDev < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.2.7-dev.2"
+  version "0.2.7-dev.3"
   license "MIT"
 
   depends_on "imagemagick"
@@ -18,26 +18,26 @@ class SciclawDev < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.7-dev.2/sciclaw-darwin-arm64"
-      sha256 "855a95339e4fe9f131aa2f53f35a737111476d33f804ff4f9efdac5def49826a"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.7-dev.3/sciclaw-darwin-arm64"
+      sha256 "9436dc6b1d2ec23ae4aacc156a57fe850ccbec6e91a9a28ccb4af291f6e97166"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.7-dev.2/sciclaw-linux-arm64"
-      sha256 "907920de36ffffe50ffcc164a2e61bd9f62a8deac9727c425da7ac59ed65ca58"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.7-dev.3/sciclaw-linux-arm64"
+      sha256 "b9a2f6938eecca7433fc7421007f672094698e726106b52f6873b519323650c7"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.7-dev.2/sciclaw-linux-amd64"
-      sha256 "8a5ac0008e25745cb7cbdb1fff828238a20c66fd24e0f2c8872a0b4ee552af12"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.7-dev.3/sciclaw-linux-amd64"
+      sha256 "32c1e481a81944dd1d455870a8981666a059be38980089e5f9f5eaf4da7ca7e1"
     end
     depends_on "sciclaw-quarto"
   end
 
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.2.7-dev.1.tar.gz"
-    sha256 "d1597030975e4e8307e7646e8478cb9e16fea723c80d27a96fccad9a02c66690"
+    url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.2.7-dev.3.tar.gz"
+    sha256 "69155c7e0af0d93062c2b59568b161f951d18d63e2e3bfd853e0586f3be87c37"
   end
 
   def install
