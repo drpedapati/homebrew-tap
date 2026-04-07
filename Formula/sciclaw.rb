@@ -4,40 +4,42 @@ class Sciclaw < Formula
   version "0.2.8"
   license "MIT"
 
+  depends_on "imagemagick"
+  depends_on "irl"
+  depends_on "pandoc"
+  depends_on "ripgrep"
+  depends_on "sciclaw-docx-review"
+  depends_on "sciclaw-pptx-review"
+  depends_on "sciclaw-pubmed-cli"
+  depends_on "sciclaw-xlsx-review"
+  depends_on "sciclaw-claude-agent"
+
+  depends_on "uv"
+
   on_macos do
     on_arm do
       url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.8/sciclaw-darwin-arm64"
-      sha256 "56542caf8e7657448b7e042ab71c454e1a7408dbab906293f13878922c4e986d"
+      sha256 "f21b6f21945df00b2ead930ff1952ac4c0e5f6e199aec7d5e859ec6bae073542"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.8/sciclaw-linux-arm64"
-      sha256 "a50b3863dc1782c038e20b67723c786eba83c91d13fe942503cc17093834ded1"
+      sha256 "0ec52d9784ba539780a243746ce804f565dd8aee98dd3db990e661119cb7ed42"
     end
     on_intel do
       url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.8/sciclaw-linux-amd64"
-      sha256 "173b39bcf444bb6856d76f37e62816043f25fb439f587bc6dd6e265f9b99632b"
+      sha256 "69210558d8ece6ea19d2d975cbc3771e399e6c3b5f33e0f46506f5d72177d804"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.2.8.tar.gz"
-    sha256 "68066a923ffceca8bdd206673a698ccbe91bb8cd9e7f3a9896942de40ebbb868"
+    url "https://github.com/drpedapati/sciclaw/releases/download/v0.2.8/source-sciclaw-v0.2.8-source.tar.gz"
+    sha256 "8f5a0f9229468fc5e56641b34368479cbaa7efb669fa9e149ab0f7c36907a009"
   end
-
-  depends_on "irl"
-  depends_on "imagemagick"
-  depends_on "pandoc"
-  depends_on "ripgrep"
-  depends_on "uv"
-  depends_on "sciclaw-docx-review"
-  depends_on "sciclaw-pptx-review"
-  depends_on "sciclaw-pubmed-cli"
-  depends_on "sciclaw-xlsx-review"
 
   def install
     # Install pre-compiled binary
@@ -97,8 +99,10 @@ class Sciclaw < Formula
     end
     assert_match "docx-review", shell_output("#{Formula["sciclaw-docx-review"].opt_bin}/docx-review --version")
     assert_match "pptx-review", shell_output("#{Formula["sciclaw-pptx-review"].opt_bin}/pptx-review --version")
-    assert_match "PubMed", shell_output("#{Formula["sciclaw-pubmed-cli"].opt_bin}/pubmed --help")
     assert_match "xlsx-review", shell_output("#{Formula["sciclaw-xlsx-review"].opt_bin}/xlsx-review --version")
+    assert_match "PubMed", shell_output("#{Formula["sciclaw-pubmed-cli"].opt_bin}/pubmed --help")
+    assert_match "stdin/stdout bridge", shell_output("#{Formula["sciclaw-claude-agent"].opt_bin}/sciclaw-claude-agent --help")
+
     ENV["HOME"] = testpath
     system bin/"sciclaw", "onboard", "--yes"
     assert_path_exists testpath/"sciclaw/AGENTS.md"
