@@ -1,31 +1,31 @@
 class SciclawDocxReview < Formula
   desc "Read, edit, create, and diff Word documents with tracked changes from the CLI"
   homepage "https://github.com/drpedapati/docx-review"
-  version "1.5.0"
+  version "1.5.1"
   version_scheme 1
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/docx-review/releases/download/v1.5.0/docx-review-darwin-arm64"
-      sha256 "19f574eefcd02d3160982f9aa3d9472d81e92b95f8055150ade89b6d6f1d7da9"
+      url "https://github.com/drpedapati/docx-review/releases/download/v1.5.1/docx-review-darwin-arm64"
+      sha256 "82004791c4a4c511e85afd03a1423bc9638dbdebb3f69da312f9181d9180aaff"
     end
 
     on_intel do
-      url "https://github.com/drpedapati/docx-review/releases/download/v1.5.0/docx-review-darwin-amd64"
-      sha256 "7ea25c4be73a27e3a39a88abcfe6ad470041f598c0f85df86e62b7d2a0565240"
+      url "https://github.com/drpedapati/docx-review/releases/download/v1.5.1/docx-review-darwin-amd64"
+      sha256 "e24d9c11575ffa48ed25fcfc69f8302a7382feb4e797ec906ca5894516b68378"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/docx-review/releases/download/v1.5.0/docx-review-linux-arm64"
-      sha256 "f1479f2b3db4ab5dea8d975ff08895a6086acdc2ca78923b1bcca43b8bfcd8ce"
+      url "https://github.com/drpedapati/docx-review/releases/download/v1.5.1/docx-review-linux-arm64"
+      sha256 "f851d5aab6c1e6d9f1062121f315d0b26c70f8ea98e56ad1a1a58641b05419e4"
     end
 
     on_intel do
-      url "https://github.com/drpedapati/docx-review/releases/download/v1.5.0/docx-review-linux-amd64"
-      sha256 "b99f40b283e159fe05ccfa682826aa0b017c9e471f8bb658e8822fcc86616d19"
+      url "https://github.com/drpedapati/docx-review/releases/download/v1.5.1/docx-review-linux-amd64"
+      sha256 "a85d9f3d7a8d38b392c17a300d99e18f742dcba9b7b4f6aa63baf606100d2a15"
     end
   end
 
@@ -35,6 +35,6 @@ class SciclawDocxReview < Formula
   end
 
   test do
-    assert_match "docx-review 1.5.0", shell_output("#{bin}/docx-review --version")
+    assert_match "docx-review 1.5.1", shell_output("#{bin}/docx-review --version")
   end
 end
