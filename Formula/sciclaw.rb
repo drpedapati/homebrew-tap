@@ -1,45 +1,43 @@
 class Sciclaw < Formula
   desc "Autonomous paired scientist CLI forked from PicoClaw"
   homepage "https://github.com/drpedapati/sciclaw"
-  version "0.3.8"
+  version "0.3.9"
   license "MIT"
-
-  depends_on "imagemagick"
-  depends_on "irl"
-  depends_on "pandoc"
-  depends_on "ripgrep"
-  depends_on "sciclaw-docx-review"
-  depends_on "sciclaw-pptx-review"
-  depends_on "sciclaw-pubmed-cli"
-  depends_on "sciclaw-xlsx-review"
-  depends_on "sciclaw-claude-agent"
-
-  depends_on "uv"
 
   on_macos do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.3.8/sciclaw-darwin-arm64"
-      sha256 "b5694034c5eb92346c3965c365ad934f55cc69f4218efa54dca2ff5b10c8a4e2"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.3.9/sciclaw-darwin-arm64"
+      sha256 "2711f8c4190c4e7ce75d06d282e06086f90b66d67bc7ff472174c229c2e89313"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.3.8/sciclaw-linux-arm64"
-      sha256 "faac41f1702b22088385a73e5e98d08af849fef202cb85795be4c60f54fe7436"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.3.9/sciclaw-linux-arm64"
+      sha256 "a9ba1eaeaad43ee0f5cc7e0590bc46929adfc36482a4f04530047ae28a7f3ca9"
     end
     on_intel do
-      url "https://github.com/drpedapati/sciclaw/releases/download/v0.3.8/sciclaw-linux-amd64"
-      sha256 "e9295b74b8dd3c3ef0ed0be4edc03d450b9c7dbbee25d409800bfe40039d71ff"
+      url "https://github.com/drpedapati/sciclaw/releases/download/v0.3.9/sciclaw-linux-amd64"
+      sha256 "3e877202a0c9a0e41d6281ee5870bc8466a73ca628dbe80de4b37311dfd8db4e"
     end
     depends_on "sciclaw-quarto"
   end
 
   # Source archive provides skills and workspace templates
   resource "source" do
-    url "https://github.com/drpedapati/sciclaw/releases/download/v0.3.8/source-sciclaw-v0.3.8-source.tar.gz"
-    sha256 "d7dcb07209cc2703711d51621a10dadb4ecdcd1e7890bf541073c54b0e91063e"
+    url "https://github.com/drpedapati/sciclaw/archive/refs/tags/v0.3.9.tar.gz"
+    sha256 "c97b9bec145d690f7bd8f1428b1cf3296b492fb2bfc8c456d0ab7bb868025392"
   end
+
+  depends_on "irl"
+  depends_on "imagemagick"
+  depends_on "pandoc"
+  depends_on "ripgrep"
+  depends_on "uv"
+  depends_on "sciclaw-docx-review"
+  depends_on "sciclaw-pptx-review"
+  depends_on "sciclaw-pubmed-cli"
+  depends_on "sciclaw-xlsx-review"
 
   def install
     # Install pre-compiled binary
@@ -99,10 +97,8 @@ class Sciclaw < Formula
     end
     assert_match "docx-review", shell_output("#{Formula["sciclaw-docx-review"].opt_bin}/docx-review --version")
     assert_match "pptx-review", shell_output("#{Formula["sciclaw-pptx-review"].opt_bin}/pptx-review --version")
-    assert_match "xlsx-review", shell_output("#{Formula["sciclaw-xlsx-review"].opt_bin}/xlsx-review --version")
     assert_match "PubMed", shell_output("#{Formula["sciclaw-pubmed-cli"].opt_bin}/pubmed --help")
-    assert_match "stdin/stdout bridge", shell_output("#{Formula["sciclaw-claude-agent"].opt_bin}/sciclaw-claude-agent --help")
-
+    assert_match "xlsx-review", shell_output("#{Formula["sciclaw-xlsx-review"].opt_bin}/xlsx-review --version")
     ENV["HOME"] = testpath
     system bin/"sciclaw", "onboard", "--yes"
     assert_path_exists testpath/"sciclaw/AGENTS.md"
